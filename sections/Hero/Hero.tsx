@@ -1,71 +1,30 @@
 import Image from "next/image";
 import React from "react";
 
-import img1 from "@/public/assets/img1.jpeg";
-import img3 from "@/public/assets/img3.jpeg";
-import img2 from "@/public/assets/img2.jpeg";
-import img4 from "@/public/assets/img4.jpeg";
-import img5 from "@/public/assets/img5.jpeg";
-import img6 from "@/public/assets/img6.jpeg";
-import img7 from "@/public/assets/img7.jpeg";
-import img8 from "@/public/assets/img8.jpeg";
-import img9 from "@/public/assets/img9.jpeg";
-import img10 from "@/public/assets/img10.jpeg";
-import img11 from "@/public/assets/img11.jpeg";
-import img12 from "@/public/assets/img12.jpeg";
-import img13 from "@/public/assets/img13.jpeg";
-import img14 from "@/public/assets/img14.jpeg";
-import img15 from "@/public/assets/img15.jpeg";
-import img16 from "@/public/assets/img16.jpeg";
-import img17 from "@/public/assets/img17.jpeg";
 import "./style.scss";
-
-// مصفوفة البيانات
-const images = [
-  { src: img1, className: "col-span-2 md:col-span-2" },
-  { src: img10, className: "md:col-span-2" },
-  { src: img11, className: "md:col-span-2" },
-  { src: img12, className: "col-span-2 md:col-span-4 max-md:justify-self-end" },
-  {
-    src: img13,
-    className: "col-span-2 max-md:justify-self-end md:col-span-2 lg:col-span-2",
-  },
-  {
-    src: img14,
-    className: "col-span-2 max-md:justify-self-end md:col-span-2 lg:col-span-2",
-  },
-  { src: img15, className: "col-span-2 md:col-span-2 lg:col-span-2" },
-  { src: img16, className: "col-span-2 md:col-span-2 lg:col-span-2" },
-  { src: img17, className: "md:col-span-2" },
-  { src: img8, className: "md:col-span-2" },
-  { src: img6, className: "col-span-2 md:col-span-2" },
-  { src: img7, className: "md:col-span-2" },
-  { src: img9, className: "md:col-span-2" },
-  { src: img4, className: "col-span-2 md:col-span-4" },
-  { src: img5, className: "col-span-2 max-md:justify-self-end md:col-span-2" },
-  { src: img2, className: " md:col-span-2" },
-  { src: img3, className: " md:col-span-2" },
-];
+import { sampleData } from "@/sampleData";
+ import Button from "@/components/Button";
 
 export const Hero = () => {
   return (
     <section data-scroll-section>
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-4">
-          {images.map((img, index) => (
-            <div
+        <div className="grid grid-cols-2 md:grid-cols-12 md:gap-x-36 gap-y-16">
+          {sampleData.map(({ src, slug, className }, index) => (
+            <Button
+              href={slug}
               key={index}
-              className={`${img.className} mt-10 relative max-md:w-[45vw]
-               md:w-[10vw] max-w-[200px] max-md:max-w-[350px] aspect-[3/5] md:aspect-[4/5]`}
+              className={`${className} mt-10 md:mt-10 md:mb-10 relative max-md:w-[45vw] max-md:max-w-[350px] aspect-[3/5]
+              max-w-[200px] md:w-[10vw] md:aspect-[5/5]  `}
             >
               <Image
-                src={img.src}
+                src={src}
                 alt={`img${index}`}
                 fill
                 data-scroll
                 className="image object-cover"
               />
-            </div>
+            </Button>
           ))}
         </div>
       </div>
