@@ -22,7 +22,7 @@ export const Hero = () => {
                 alt={`img${index}`}
                 fill
                 data-scroll
-                className="image object-cover"
+                className="image object-top object-cover"
               />
             </Button>
           ))}

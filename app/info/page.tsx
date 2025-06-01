@@ -9,7 +9,7 @@ import { useInView } from "framer-motion";
 import AnimatedText from "@/components/AnimatedText";
 
 const phrase =
-  "PIERRE CATHALA is a color-first editorial and commercial photographer and art director based in Paris. His stylerevolves around contrasty, surreal and extravagantsceneries. Often characterized as bold and strong.";
+  "Thomas Redgrave is a color-driven visual designer and art director based in London. His style revolves around contrast, imagination, and immersive scenes, often described as bold and expressive, leaving a strong visual impression.";
 
 const Page = () => {
   useLocoScroll(true);
@@ -41,37 +41,54 @@ const Page = () => {
                   <h2 className=" desc-title uppercase">Project/</h2>
                   <ul className=" desc-title mt-2 uppercase text-gray-400">
                     <AnimatedText
-                      phrase={"Taste of blue"}
+                      phrase={"Velvet Shadows"}
                       isInView={isInView}
                     />{" "}
                     <br />
                     <AnimatedText
-                      phrase={"TCadaver Beauty"}
+                      phrase={"Echoes of Neon"}
                       isInView={isInView}
                     />{" "}
                     <br />
                     <AnimatedText
-                      phrase={"Somber lover"}
+                      phrase={"Glass Skin"}
                       isInView={isInView}
                     />{" "}
                     <br />
                     <AnimatedText
-                      phrase={"The New Coutures Series"}
+                      phrase={"Crimson Syntax"}
                       isInView={isInView}
                     />{" "}
                     <br />
                     <AnimatedText
-                      phrase={"Schott Campaign"}
+                      phrase={"Noir Reverie"}
                       isInView={isInView}
                     />{" "}
                     <br />
-                    <AnimatedText phrase={"RVB"} isInView={isInView} /> <br />
                     <AnimatedText
-                      phrase={"Planete Morte Bag Campaign"}
+                      phrase={"Electric Stillness"}
                       isInView={isInView}
                     />{" "}
                     <br />
-                    <AnimatedText phrase={"Give me Red!"} isInView={isInView} />
+                    <AnimatedText
+                      phrase={"The Silk Ritual"}
+                      isInView={isInView}
+                    />{" "}
+                    <br />
+                    <AnimatedText
+                      phrase={"Dust & Dissonance"}
+                      isInView={isInView}
+                    />{" "}
+                    <br />
+                    <AnimatedText
+                      phrase={"Monochrome Bloom"}
+                      isInView={isInView}
+                    />{" "}
+                    <br />
+                    <AnimatedText
+                      phrase={"Heatwave Archive"}
+                      isInView={isInView}
+                    />
                   </ul>
                 </div>
               </div>

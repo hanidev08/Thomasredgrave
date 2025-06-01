@@ -19,13 +19,12 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     <section data-scroll-section>
       <div className="container relative">
         <div className="">
-          <h2 className="text-[12px] text-[#080808]">/0{data.id}</h2>
+          <h2 className="text-[12px] text-[#080808]">/{data.id}</h2>
           {data.details && (
             <ul className="mt-2 text-[12px] leading-4 uppercase text-[#080808]">
               <li>{data.details.title}</li>
               <li>Agency: {data.details.agency}</li>
-              <li>Client: {data.details.client}</li>
-              <li>Type: {data.details.type}</li>
+              <li>Model: {data.details.model}</li>
               <li>Year: {data.details.year}</li>
             </ul>
           )}
@@ -37,43 +36,23 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               src={data.src}
               alt={data.slug}
               fill
-              className="image object-cover"
+              className="image object-top object-cover"
             />
           </div>
         </div>
-        <div className="flex items-center justify-center h-screen">
-          <div className=" relative w-[50vw] max-w-[400px] aspect-[4/5] ">
-            <Image
-              data-scroll
-              src={data.images[0]}
-              alt={data.slug}
-              fill
-              className="image object-cover"
-            />
+        {data.images.map((img) => (
+          <div key={img} className="flex items-center justify-center h-screen">
+            <div className=" relative w-[50vw] max-w-[400px] aspect-[4/5] ">
+              <Image
+                data-scroll
+                src={img}
+                alt=""
+                fill
+                className="image object-top object-cover"
+              />
+            </div>
           </div>
-        </div>
-        <div className="flex items-center justify-center h-screen">
-          <div className=" relative w-[50vw] max-w-[400px] aspect-[4/5] ">
-            <Image
-              data-scroll
-              src={data.images[1]}
-              alt={data.slug}
-              fill
-              className="image object-cover"
-            />
-          </div>
-        </div>{" "}
-        <div className="flex items-center justify-center h-screen">
-          <div className=" relative w-[50vw] max-w-[400px] aspect-[4/5] ">
-            <Image
-              data-scroll
-              src={data.images[2]}
-              alt={data.slug}
-              fill
-              className="image object-cover"
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
